@@ -1,0 +1,15 @@
+2013-04-11  gettextize  <bug-gnu-gettext@gnu.org>
+
+	* Makefile.am (SUBDIRS): Add po.
+	(ACLOCAL_AMFLAGS): New variable.
+	(EXTRA_DIST): New variable.
+	* configure.ac (AC_CONFIG_FILES): Add po/Makefile.in.
+
+2013-04-11  Igor Alimov  <igoral@gmail.com>
+
+	* configure,ac: New file.
+	* Makefile.am: New file.
+	* NEWS: New file.
+	* README: New file.
+	* AUTHORS: New file.
+	* ChangeLog: New file.

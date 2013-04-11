@@ -1,2 +1,22 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+/.autotools
 /.cproject
 /.project
+/autom4te.cache
+/hello-0.01.tar.gz
+/Makefile
+/config.log
+/config.status
+/gmp-0.01.tar.gz
