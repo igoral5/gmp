@@ -1,0 +1,8 @@
+2013-04-11  Igor Alimov  <igoral@gmail.com>
+
+	* configure,ac: New file.
+	* Makefile.am: New file.
+	* NEWS: New file.
+	* README: New file.
+	* AUTHORS: New file.
+	* ChangeLog: New file.
