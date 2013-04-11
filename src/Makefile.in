@@ -72,6 +72,8 @@ PROGRAMS = $(bin_PROGRAMS)
 am_gmp_OBJECTS = main.$(OBJEXT)
 gmp_OBJECTS = $(am_gmp_OBJECTS)
 gmp_LDADD = $(LDADD)
+gmp_LINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(gmp_LDFLAGS) \
+	$(LDFLAGS) -o $@
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__depfiles_maybe = depfiles
@@ -107,6 +109,7 @@ CFLAGS = @CFLAGS@
 CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
 CXX = @CXX@
+CXXCPP = @CXXCPP@
 CXXDEPMODE = @CXXDEPMODE@
 CXXFLAGS = @CXXFLAGS@
 CYGPATH_W = @CYGPATH_W@
@@ -118,6 +121,7 @@ ECHO_T = @ECHO_T@
 EGREP = @EGREP@
 EXEEXT = @EXEEXT@
 GETTEXT_MACRO_VERSION = @GETTEXT_MACRO_VERSION@
+GMP_EXTRA_LIBS = @GMP_EXTRA_LIBS@
 GMSGFMT = @GMSGFMT@
 GMSGFMT_015 = @GMSGFMT_015@
 GREP = @GREP@
@@ -216,6 +220,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AM_CPPFLAGS = -DLOCALEDIR=\"$(localedir)\"
 gmp_SOURCES = main.cpp gettext.h
+gmp_LDFLAGS = $(GMP_EXTRA_LIBS)
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
@@ -308,7 +313,7 @@ clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
 gmp$(EXEEXT): $(gmp_OBJECTS) $(gmp_DEPENDENCIES) $(EXTRA_gmp_DEPENDENCIES) 
 	@rm -f gmp$(EXEEXT)
-	$(CXXLINK) $(gmp_OBJECTS) $(gmp_LDADD) $(LIBS)
+	$(gmp_LINK) $(gmp_OBJECTS) $(gmp_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
