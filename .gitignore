@@ -2,3 +2,7 @@
 /.cproject
 /.project
 /autom4te.cache
+/hello-0.01.tar.gz
+/Makefile
+/config.log
+/config.status
